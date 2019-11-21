@@ -1,0 +1,57 @@
+<br><hr>
+<p class="font-weight-bolder"><h1>User Profile Dashboard</h1></p>
+<h5>Welcome, <p class="text-uppercase"><%= user.username %></p></h5>
+<h5>Login Type As:<p class="text-uppercase"><%= user.type %></p></h5>
+
+<a href="/<%= user.type %>s/<%= user.username %>/details" class="btn btn-secondary">Detail Info</a><br><br>
+<% if (user.type === 'admin') { %>
+  <a href="/users/register2" class="btn btn-secondary">Register New User</a><br><br>
+  <a href="/<%= user.type %>s/<%= user.username %>/managerlist" class="btn btn-secondary">Check All Employee List</a><br><br>
+  <a href="/<%= user.type %>s/<%= user.username %>/classes" class="btn btn-secondary">View Class Info</a><br><br>
+<% } else if (user.type === 'manager')  { %>
+  <a href="/<%= user.type %>s/<%= user.username %>/employeelist" class="btn btn-secondary">Check Employee List in this Branch</a><br><br>
+  <a href="/<%= user.type %>s/<%= user.username %>/classes" class="btn btn-secondary">Check Registered Class Info</a><br><br>
+<% } else {%>
+  <a href="/<%= user.type %>s/<%= user.username %>/classes" class="btn btn-secondary">Check Registered Class Info</a><br><br>
+<% } %>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+
+
+
+<!-- <ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="#home" data-toggle="tab">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#aboutus" data-toggle="tab">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#contactus" data-toggle="tab">Contact Us</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#contactus2" data-toggle="tab">Contact Us2</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#contactus3" data-toggle="tab">Contact Us3</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#contactus4" data-toggle="tab">Contact Us4</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#contactus5" data-toggle="tab">Contact Us5</a>
+    </li>
+
+</ul>
+
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">1</div>
+    <div role="tabpanel" class="tab-pane" id="aboutus">2</div>
+    <div role="tabpanel" class="tab-pane" id="contactus">3</div>
+    <div role="tabpanel" class="tab-pane" id="contactus2">4</div>
+    <div role="tabpanel" class="tab-pane" id="contactus3">5</div>
+    <div role="tabpanel" class="tab-pane" id="contactus4">6</div>
+    <div role="tabpanel" class="tab-pane" id="contactus5">7</div>
+</div> -->
+
+<script> document.title = 'User Dashboard' </script>

@@ -1,0 +1,71 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <i class="fas fa-user-plus"></i> Register New Lesson</h1>
+          <form action="/courses/<%=course_id%>/lesson/add" method="POST">
+            <div class="form-group">
+            <label for="lesson_number">Lesson Number</label>
+            <input
+              type="text"
+              id="lesson_number"
+              name="lesson_number"
+              class="form-control"
+              placeholder="Enter Your Lesson Number You want add"
+              value="<%= typeof lesson_number != 'undefined' ? lesson_number : '' %>"
+            />
+            </div>
+            <div class="form-group">
+              <label for="lesson_title">Lesson Title</label>
+              <input
+                type="text"
+                id="lesson_title"
+                name="lesson_title"
+                class="form-control"
+                placeholder="Enter Your Lesson Title You want add"
+                value="<%= typeof lesson_title != 'undefined' ? lesson_title : '' %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="lesson_summary">Lesson Summary</label>
+              <input
+                type="text"
+                id="lesson_summary"
+                name="lesson_summary"
+                class="form-control"
+                placeholder="Enter Your Lesson Summary You want add"
+                value="<%= typeof lesson_summary != 'undefined' ? lesson_summary : '' %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="lesson_description">Lesson Description</label>
+              <input
+                type="text"
+                id="lesson_description"
+                name="lesson_description"
+                class="form-control"
+                placeholder="Enter Your Lesson Description You want add"
+                value="<%= typeof lesson_description != 'undefined' ? lesson_description : '' %>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="lesson_content">Lesson Content</label>
+              <input
+                type="text"
+                id="lesson_content"
+                name="lesson_content"
+                class="form-control"
+                placeholder="Enter Your Lesson Content You want add"
+                value="<%= typeof lesson_content != 'undefined' ? lesson_content : '' %>"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Register New Lesson
+            </button>
+          </form>
+    </div>
+  </div>
+</div>
+
+
+<script> document.title = 'Add a New Lesson Pages' </script>

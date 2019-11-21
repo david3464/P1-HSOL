@@ -1,0 +1,21 @@
+<hr>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info">Manager UserName : <%= manager.username%></li>
+    <li class="list-group-item list-group-item-success">Manager First_Name : <%= manager.first_name%></li>
+    <li class="list-group-item list-group-item-info">Manager Last_Name : <%= manager.last_name%></li>
+    <li class="list-group-item list-group-item-success">Manager Role : <%= manager.role%></li>
+    <li class="list-group-item list-group-item-info">Manager Address: <%= manager.address%></li>
+    <li class="list-group-item list-group-item-success">Manager Post Code: <%= manager.post_code%></li>
+    <li class="list-group-item list-group-item-info">Manager City: <%= manager.city%></li>
+    <li class="list-group-item list-group-item-success">Manager Email: <%= manager.email%></li>
+    <li class="list-group-item list-group-item-info">Manager Phone Number: <%= manager.mobile%></li>
+    <li class="list-group-item list-group-item-success">Manager Branch: <%= manager.branch%></li>
+</ul><br>
+
+<a href="/users/dashboard" class="btn btn-secondary">User Home Page</a><br><br>
+<a href="/managers/<%= manager.username%>/details/edit" class="btn btn-secondary">Edit Personal Information</a><br><br>
+<%if (user.type === 'admin') { %>
+    <%- include('../partials/_delete_form', {url :`/managers/${manager.username}/details`}) %>
+<% } %>
+
+<script> document.title = 'Manager Person Info Page' </script>

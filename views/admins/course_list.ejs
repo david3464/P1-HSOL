@@ -1,0 +1,37 @@
+<hr><br>
+<dl class="row">
+    <dt class="col-sm-3">Admin UserName : </dt>
+    <dd class="col-sm-9"><%= admin.username%></dd>
+  
+    <dt class="col-sm-3">Admin Branch :</dt>
+    <dd class="col-sm-9"><%= admin.branch%></dd>
+  
+    <dt class="col-sm-3">Admin Role:</dt>
+    <dd class="col-sm-9"><%= admin.role%></dd>
+</dl>
+  
+  
+<div class="accordion" id="accordionExample">
+<div class="card">
+    <% for (let i=0; i<admin.courses.length; i++) { %>
+    <div class="card-header" id="headingOne">
+    <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<%= admin.courses[i].course_package %>" aria-expanded="true" aria-controls="collapseOne">      
+            Course Title:<p class="text-uppercase"><%= admin.courses[i].course_title %></p>
+        </button>
+    </h2>
+    </div>
+
+    <div id="<%= admin.courses[i].course_package %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div class="card-body">
+        Package Number: <%= admin.courses[i].course_package %><br>
+        View Detail Lesson: <a href="/courses/<%= admin.courses[i].course_id %>/lessonlist" class="btn btn-secondary"> Click Here </a><br>
+    </div>
+    </div>
+    <% } %>
+</div>
+</div>
+<br>
+<a href="/users/dashboard" class="btn btn-secondary">Back To User Profile Page</a>
+
+<script> document.title = 'Course List Page' </script>

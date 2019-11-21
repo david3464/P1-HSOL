@@ -1,0 +1,25 @@
+<% classes.forEach(classes => { %>
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<%= classes.package %>" aria-expanded="true" aria-controls="collapseOne">
+                <%= classes.title %>
+            </button>
+          </h2>
+        </div>
+
+        <div id="<%= classes.package %>" class="collapse off" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <%= classes.description %><br>
+            Package:<%= classes.package%><br>
+            Author:<%=classes.author%>
+          </div>
+        </div>
+      </div>
+    </div>
+<% }) %>
+
+
+
+<script> document.title = 'Course Information Pages' </script>

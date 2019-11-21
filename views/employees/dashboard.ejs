@@ -1,0 +1,21 @@
+<hr>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info">Employee UserName : <%= employee.username%></li>
+    <li class="list-group-item list-group-item-success">Employee First_Name : <%= employee.first_name%></li>
+    <li class="list-group-item list-group-item-info">Employee Last_Name : <%= employee.last_name%></li>
+    <li class="list-group-item list-group-item-success">Employee Role : <%= employee.role%></li>
+    <li class="list-group-item list-group-item-info">Employee Address: <%= employee.address%></li>
+    <li class="list-group-item list-group-item-success">Employee Post Code: <%= employee.post_code%></li>
+    <li class="list-group-item list-group-item-info">Employee City: <%= employee.city%></li>
+    <li class="list-group-item list-group-item-success">Employee Email: <%= employee.email%></li>
+    <li class="list-group-item list-group-item-info">Employee Phone Number: <%= employee.mobile%></li>
+    <li class="list-group-item list-group-item-success">Employee Branch: <%= employee.branch%></li>
+  </ul><br>
+
+<a href="/users/dashboard" class="btn btn-secondary">User Home Page</a><br><br>
+<a href="/employees/<%= employee.username%>/details/edit" class="btn btn-secondary">Edit Personal Information</a><br><br>
+<%if (user.type === 'manager' || user.type === 'admin') { %>
+    <%- include('../partials/_delete_form', {url :`/employees/${employee.username}/details`}) %>
+<% } %>
+
+<script> document.title = 'Employee Person Info Page' </script>

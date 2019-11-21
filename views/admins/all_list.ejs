@@ -1,0 +1,63 @@
+<hr><br>
+<dl class="row">
+    <dt class="col-sm-3">Admin UserName :</dt>
+    <dd class="col-sm-9"><%= admin.username%></dd>
+  
+    <dt class="col-sm-3">Admin Branch:</dt>
+    <dd class="col-sm-9"><%= admin.branch%></dd>
+  
+    <dt class="col-sm-3">Admin Role:</dt>
+    <dd class="col-sm-9"><%= admin.role%></dd>
+</dl>
+
+The Manager List Start Here
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Manager UserName</th>
+        <th scope="col">Manager Branch</th>
+        <th scope="col">View User's Detail</th>
+        <th scope="col">View User's Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(users => { %>
+            <% if (users.type === 'manager') { %>
+            <tr>
+            <th scope="row"><%= users.username %></th>
+            <td><%= users.branch %></td>
+            <td><a href="/managers/<%= users.username %>/details" class="btn btn-secondary">View Manager Info</a></td>
+            <td><a href="/managers/<%= users.username %>/classes" class="btn btn-secondary">View Manager Class</a></td>
+            </tr>
+            <% } %>
+        <% }) %>
+    </tbody>
+</table>
+
+The Employee List Start Here
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Employee UserName</th>
+        <th scope="col">Employee Branch</th>
+        <th scope="col">View User's Detail</th>
+        <th scope="col">View User's Course</th>
+        </tr>
+    </thead>
+    <tbody>
+            <% users.forEach(users => { %>
+                <% if (users.type === 'employee') { %> 
+                <tr>
+                <th scope="row"><%= users.username %></th>
+                <td><%= users.branch %></td>
+                <td><a href="/employees/<%= users.username %>/details" class="btn btn-secondary">View Employee Info</a></td>
+                <td><a href="/employees/<%= users.username %>/classes" class="btn btn-secondary">View Employee Class</a></td>
+                </tr>
+                <% } %>
+        <% }) %>
+    </tbody>
+</table><br>
+
+<a href="/users/dashboard" class="btn btn-secondary">Back To User Profile Page</a>
+
+<script> document.title = 'All Employee List Pages' </script>

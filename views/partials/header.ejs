@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="/pictures/Heart_Sushi_Logo.jpg" alt="Heart Sushi Logo" style="width:60px;height:60px;">  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+            <a class="nav-link" href="#">HS Nav</a>
+        </li> 
+        <% if (!user) { %>
+        <li class="nav-item active">
+          <a class="nav-link" href="/users">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <% } %>
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Course</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/courses/featurecourse">Feature Course</a>
+              <a class="dropdown-item" href="/courses/commoncourse">Common Course</a>
+              <a class="dropdown-item" href="/courses/fronthostcourse">Front Desk Host Course</a>
+              <a class="dropdown-item" href="/courses/servercourse">Server Course</a>
+              <a class="dropdown-item" href="/courses/sushibarrollercourse">Sushi Bar Roller Course</a>
+              <a class="dropdown-item" href="/courses/kitchenchefcourse">Kitchen Chef Course</a>
+              <a class="dropdown-item" href="/courses/managercourse">Manager Course</a>
+        </li>
+        <!-- <li class="nav-item active dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Authors</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/authors">All Authors</a>
+                <a class="dropdown-item" href="/authors/new">Create New Author</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="/about">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://www.heartsushi.ca/" target="_blank">About Us</a>
+        </li>  
+      </ul>
+      <% if (user) { %>
+        <span >
+          <a class="nav-link" href="#">Type: <%=user.type%></a>
+        </span>
+        <span >
+          <a class="nav-link" href="/users/dashboard"><%=user.username %> Page</a>
+        </span>
+        <span >
+            <a class="nav-link" href="/users/logout">Logout</a>
+        </span>
+      <% } else { %>
+        <span >
+            <a class="nav-link" href="/users/register">Register</a>
+        </span>
+        <span >
+            <a class="nav-link" href="/users/login">Login</a>
+        </span>
+      <% } %>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+</nav>

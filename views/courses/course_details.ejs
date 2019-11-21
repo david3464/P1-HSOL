@@ -1,0 +1,57 @@
+<hr>
+<div class="shadow-lg p-3 mb-5 bg-white rounded">Title: <%=course.title%></div>
+<div class="shadow-lg p-3 mb-5 bg-white rounded">Category: <%=course.category%></div>
+<div class="shadow-lg p-3 mb-5 bg-white rounded">Author： <%=course.author%></div>
+<div class="shadow-lg p-3 mb-5 bg-white rounded">Package： <%=course.package%></div>
+<p>Course Description : <%= course.description%></p>
+            <%if (user) { %>
+              <%if (user.type === 'employee') { %>
+              <a class="button" href="/courses/<%= course.id %>/lessonlist">Lesson Details</a>
+              <form id="classRegForm" method="POST" action="/<%=user.type%>s/classes/register">
+                <input type="hidden" name="user_type" value="<%=user.type%>">
+                <input type="hidden" name="user_username" value="<%=user.username%>">
+                <input type="hidden" name="course_id" value="<%=course.id%>">
+                <input type="hidden" name="course_title" value="<%=course.title%>">
+                <input type="hidden" name="course_package" value="<%=course.package%>">
+                <input type="submit" class="button" value="Register as one of Your Employee's Course">
+              </form>
+              <% }  else if (user.type === 'manager') { %>
+                <a class="button" href="/courses/<%= course.id %>/lessonlist">Lesson Details</a>
+                <form id="classRegForm" method="POST" action="/<%=user.type%>s/classes/register">
+                  <input type="hidden" name="user_type" value="<%=user.type%>">
+                  <input type="hidden" name="user_username" value="<%=user.username%>">
+                  <input type="hidden" name="course_id" value="<%=course.id%>">
+                  <input type="hidden" name="course_title" value="<%=course.title%>">
+                  <input type="hidden" name="course_package" value="<%=course.package%>">
+                  <input type="submit" class="button" value="Register as one of Your Mnager's Course">
+                </form>
+              <% } else {%>
+                <a class="button" href="/courses/<%= course.id %>/lessonlist">Lesson Details</a>
+                <form id="classRegForm" method="POST" action="/<%=user.type%>s/classes/register">
+                  <input type="hidden" name="user_type" value="<%=user.type%>">
+                  <input type="hidden" name="user_username" value="<%=user.username%>">
+                  <input type="hidden" name="course_id" value="<%=course.id%>">
+                  <input type="hidden" name="course_title" value="<%=course.title%>">
+                  <input type="hidden" name="course_package" value="<%=course.package%>">
+                  <input type="submit" class="button" value="Add Course to View/Edit Course Details">
+                </form>
+              <% } %>
+            <% }  else { %>
+                Please Login In To Check The Details<br><br>
+                <a href="/users/register" class="btn btn-primary" >Register as New User </a><br><br>
+                <a href="/users" class="btn btn-primary">Go Back Home Page </a>
+            <% } %>
+        </div>
+</div>
+<!-- {{#if user}}
+    <form id="classRegForm" method="post" action="/{{type}}s/classes/register">
+      <input type="hidden" name="student_id" value="{{user._id}}">
+      <input type="hidden" name="class_id" value="{{class._id}}">
+      <input type="hidden" name="class_title" value="{{class.title}}">
+      <input type="submit" class="button" value="Register For This Class">
+    </form>
+{{else}}
+	<p>You must be logged in to register for this class</p>
+{{/if}} -->
+
+<script> document.title = 'Course Details Information Pages' </script>

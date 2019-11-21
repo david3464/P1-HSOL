@@ -1,0 +1,18 @@
+<hr>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info">Admin UserName : <%= admin.username%></li>
+    <li class="list-group-item list-group-item-success">Admin First_Name : <%= admin.first_name%></li>
+    <li class="list-group-item list-group-item-info">Admin Last_Name : <%= admin.last_name%></li>
+    <li class="list-group-item list-group-item-success">Admin Role : <%= admin.role%></li>
+    <li class="list-group-item list-group-item-info">Admin Address: <%= admin.address%></li>
+    <li class="list-group-item list-group-item-success">Admin Post Code: <%= admin.post_code%></li>
+    <li class="list-group-item list-group-item-info">Admin City: <%= admin.city%></li>
+    <li class="list-group-item list-group-item-success">Admin Email: <%= admin.email%></li>
+    <li class="list-group-item list-group-item-info">Admin Phone Number: <%= admin.mobile%></li>
+    <li class="list-group-item list-group-item-success">Admin Branch: <%= admin.branch%></li>
+</ul><br>
+
+<a href="/users/dashboard" class="btn btn-secondary">User Home Page</a><br><br>
+<a href="/admins/<%= admin.username%>/details/edit" class="btn btn-secondary">Edit Personal Information</a><br><br>
+
+<script> document.title = 'Person Info Page' </script>

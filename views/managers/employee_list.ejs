@@ -1,0 +1,35 @@
+<hr><br>
+<dl class="row">
+    <dt class="col-sm-3">Manager UserName :</dt>
+    <dd class="col-sm-9"><%= manager.username%></dd>
+    
+    <dt class="col-sm-3">Manager Branch:</dt>
+    <dd class="col-sm-9"><%= manager.branch%></dd>
+    
+    <dt class="col-sm-3">Manager Role:</dt>
+    <dd class="col-sm-9"><%= manager.role%></dd>
+</dl>
+
+<h5>The Employee List Under <%= manager.branch%></h5>
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">User Name</th>
+        <th scope="col">View Employee Detail</th>
+        <th scope="col">View Employee Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(users => { %>
+            <% if (users.branch === manager.branch && users.type !== 'admin' && users.type !== 'manager') { %> 
+            <tr>
+            <th scope="row"><%= users.username %></th>
+            <td><a href="/employees/<%= users.username %>/details" class="btn btn-secondary">View Employee Info</a></td>
+            <td><a href="/employees/<%= users.username %>/classes" class="btn btn-secondary">View Employee Class</a></td>
+            </tr>
+            <% } %>
+        <% }) %>
+    </tbody>
+</table><br>
+
+<a href="/users/dashboard" class="btn btn-secondary">Back To User Profile Page</a>
