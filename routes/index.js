@@ -6,7 +6,7 @@ var router = express.Router();
 //descriptions: Initial Index Page
 //comments: Enterance Page
 router.get('/', async (req, res, next)=> {
-  res.render('index');
+  res.render('index',{ layout: 'hero_layout'});
 });
 
 //router address localhost:3000/about

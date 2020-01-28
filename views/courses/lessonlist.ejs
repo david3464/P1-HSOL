@@ -14,15 +14,16 @@
         </tr>
     </thead>
     <tbody>
+        <% if (user.type === 'admin') { %>
+            <td><a href="/courses/<%= course._id%>/lesson/add %>">Add Lesson</a></td>
+        <% } %>
         <% for (let i=0; i<course.lessons.length; i++) { %>
         <tr>
         <th scope="row"><%= [i+1] %></th>
         <td><%= course.lessons[i].lesson_number %></td>
         <td><%= course.lessons[i].lesson_title %></td>
         <td><a href="/courses/<%= course._id%>/lesson/<%= course.lessons[i]._id %>">View</a></td>
-        <% if (user.type === 'admin') { %>
-            <td><a href="/courses/<%= course._id%>/lesson/add %>">Add Lesson</a></td>
-        <% } %>
+
         </tr>
         <% } %>
     </tbody>
