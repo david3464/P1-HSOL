@@ -12,10 +12,23 @@
               name="lesson_number"
               class="form-control"
               placeholder="Enter Your Lesson Number You want add"
-              value="<%= typeof lesson_number != 'undefined' ? lesson_number : '' %>"
+              value="<%= 1 %>"
             />
             </div>
-            <div class="form-group">
+            <fieldset disabled>
+              <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                  type="text"
+                  id="lesson_number"
+                  name="lesson_number"
+                  class="form-control"
+                  placeholder="Enter Your Lesson Number You want add"
+                  value="<%= 1 %>"
+              />
+              </div>
+            </fieldset>
+            <!-- <div class="form-group">
               <label for="lesson_title">Lesson Title</label>
               <input
                 type="text"
@@ -48,17 +61,7 @@
                 value="<%= typeof lesson_description != 'undefined' ? lesson_description : '' %>"
               />
             </div>
-            <!-- <div class="form-group">
-              <label for="lesson_content">Lesson Content</label>
-              <input
-                type="text"
-                id="lesson_content"
-                name="lesson_content"
-                class="form-control"
-                placeholder="Enter Your Lesson Content You want add"
-                value="<%= typeof lesson_content != 'undefined' ? lesson_content : '' %>"
-              />
-            </div> -->
+
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Lesson Content</label>
               <textarea type="text"
@@ -69,9 +72,9 @@
               placeholder="Enter Your Lesson Content You want add"
               value="<%= typeof lesson_content != 'undefined' ? lesson_content : '' %>"></textarea>
             </div>
-          
+           -->
             <button type="submit" class="btn btn-primary btn-block">
-              Register New Lesson
+              Update Lesson Info
             </button>
           </form>
     </div>

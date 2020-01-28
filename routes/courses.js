@@ -122,13 +122,6 @@ router.get('/:id/details', async (req, res, next)=> {
     }
 });
 
-//router address localhost:3000/courses/:id/lessons/edit
-//descriptions: Edit Lesson Content
-//comments: 
-router.get('/:id/lesson/edit', (req, res, next)=> {
-    res.render('courses/lesson_edit',{course_id:req.params.id});
-});
-
 //router address localhost:3000/courses/:id/lessons/add
 //descriptions: Add a New Lesson
 //comments: 
@@ -184,5 +177,19 @@ router.get('/:id/lesson/:lesson_id', (req, res, next)=> {
 		res.render('courses/lessondetails',{course: course, lesson_id: lesson_id});
 	});
 });
+
+//router address localhost:3000/courses/:id/lesson/:lesson_id/edit
+//descriptions: View specific lesson in detail
+//descriptions: Edit Lesson Content
+//comments: 
+// router.get('/:id/lesson/:lesson_id/edit', (req, res, next)=> {
+//     Course.getCourseById([req.params.id],function(err, course){
+//         // console.log(course);
+//         let lesson_id = req.params.lesson_id;
+//         // console.log(lesson_id);
+// 		if(err) throw err;
+// 		res.render('courses/lesson_edit',{course: course, lesson_id: lesson_id});
+// 	});
+// });
 
 module.exports = router;
