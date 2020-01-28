@@ -16,8 +16,9 @@
     <% for (let i=0; i<admin.courses.length; i++) { %>
     <div class="card-header" id="headingOne">
     <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<%= admin.courses[i].course_package %>" aria-expanded="true" aria-controls="collapseOne">      
-            Course Title:<p class="text-uppercase"><%= admin.courses[i].course_title %></p>
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<%= admin.courses[i].course_package %>" aria-expanded="true" aria-controls="collapseOne">    
+            <p>Course:<%= i+1 %> Package#:<%= admin.courses[i].course_package %>:</p> 
+            <p><%= admin.courses[i].course_title %></p>
         </button>
     </h2>
     </div>

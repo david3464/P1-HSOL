@@ -2,11 +2,67 @@
 <ul class="list-group">
     <% for (let i=0; i<course.lessons.length; i++) { %>
         <% if (course.lessons[i]._id == lesson_id) { %>
-    <li class="list-group-item active">Lesson Title： <%= course.lessons[i].lesson_title %></li>
+    <!-- <li class="list-group-item active">Lesson Title： <%= course.lessons[i].lesson_title %></li>
     <li class="list-group-item">Lesson Number: <%= course.lessons[i].lesson_number %></li>
     <li class="list-group-item">Lesson Summary: <%= course.lessons[i].lesson_summary %></li>
     <li class="list-group-item">Lesson Description: <%= course.lessons[i].lesson_description %></li>
-    <li class="list-group-item">Lesson Content: <%= course.lessons[i].lesson_content %></li>
+    <li class="list-group-item">Lesson Content: <%= course.lessons[i].lesson_content %></li> -->
+    <fieldset disabled>
+        <div class="form-group">
+            <label for="lesson_number">Lesson Number</label>
+            <input
+            type="text"
+            id="lesson_number"
+            name="lesson_number"
+            class="form-control"
+            placeholder="Enter Your Lesson Number You want add"
+            value="<%= typeof lesson_number != 'undefined' ? lesson_number : '' %>"
+            />
+        </div>
+        <div class="form-group">
+            <label for="lesson_title">Lesson Title</label>
+            <input
+                type="text"
+                id="lesson_title"
+                name="lesson_title"
+                class="form-control"
+                placeholder="Enter Your Lesson Title You want add"
+                value="<%= typeof lesson_title != 'undefined' ? lesson_title : '' %>"
+            />
+        </div>
+        <div class="form-group">
+            <label for="lesson_summary">Lesson Summary</label>
+            <input
+                type="text"
+                id="lesson_summary"
+                name="lesson_summary"
+                class="form-control"
+                placeholder="Enter Your Lesson Summary You want add"
+                value="<%= typeof lesson_summary != 'undefined' ? lesson_summary : '' %>"
+            />
+        </div>
+        <div class="form-group">
+            <label for="lesson_description">Lesson Description</label>
+            <input
+                type="text"
+                id="lesson_description"
+                name="lesson_description"
+                class="form-control"
+                placeholder="Enter Your Lesson Description You want add"
+                value="<%= typeof lesson_description != 'undefined' ? lesson_description : '' %>"
+            />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Lesson Content</label>
+            <textarea type="text"
+            rows="30" 
+            id="lesson_content"
+            name="lesson_content"
+            class="form-control"
+            placeholder="Enter Your Lesson Content You want add"
+            value="<%= typeof lesson_content != 'undefined' ? lesson_content : '' %>"><%= course.lessons[i].lesson_content %></textarea>
+        </div>
+    </fieldset>
         <% } %>   
     <% } %>
 </ul><br>
