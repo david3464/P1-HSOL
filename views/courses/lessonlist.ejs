@@ -2,6 +2,7 @@
 <div class="shadow-lg p-3 mb-5 bg-white rounded">Course Category : <%= course.category%></div>
 <div class="shadow-lg p-3 mb-5 bg-white rounded">Course Number : <%= course.course_number%></div>
 <div class="shadow-lg p-3 mb-5 bg-white rounded">Course Name : <%= course.title%></div>
+
 <p>Course Description : <%= course.description%>
 <br>
 <% if (user.type === 'admin') { %>
@@ -14,6 +15,7 @@
         <!-- <th scope="col">#</th> -->
         <th scope="col">Lesson Number</th>
         <th scope="col">Lesson Title</th>
+        <th scope="col">Lesson Summary</th>
         <th scope="col">View For Detail</th>
         </tr>
     </thead>
@@ -26,6 +28,7 @@
         <!-- <th scope="row"><%= [i+1] %></th> -->
         <td><%= course.lessons[i].lesson_number %></td>
         <td><%= course.lessons[i].lesson_title %></td>
+        <td><%= course.lessons[i].lesson_summary %></td>
         <td><a href="/courses/<%= course._id%>/lesson/<%= course.lessons[i]._id %>">View</a></td>
         </tr>
         <% } %>

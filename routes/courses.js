@@ -126,7 +126,7 @@ router.get('/:id/details', async (req, res, next)=> {
 //descriptions: Edit Lesson Content
 //comments: 
 router.get('/:id/lesson/edit', (req, res, next)=> {
-    res.render('courses/lesson_edit');
+    res.render('courses/lesson_edit',{course_id:req.params.id});
 });
 
 //router address localhost:3000/courses/:id/lessons/add
@@ -148,11 +148,11 @@ router.post('/:id/lesson/add', (req, res, next)=> {
     info ['lesson_description'] =req.body.lesson_description;
     info ['lesson_content'] =req.body.lesson_content;
     // console.log(req.body.lesson_number)
-    console.log(info);
-    console.log(info ['course_id']);
+    // console.log(info);
+    // console.log(info ['course_id']);
     
     Course.addLesson(info, function (err,lesson) {
-        console.log('lesson added...');
+        // console.log('lesson added...');
     });
     req.flash('success_msg','Lesson Add to this Course!');
     res.redirect('/users/dashboard')
