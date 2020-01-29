@@ -18,7 +18,7 @@ const Admin = require('../models/Admin');
 //descriptions: System Home Page
 //comments: 
 router.get('/', (req, res, next)=> {
-  res.render('users/user_index');
+  res.render('users/user_index',{ layout: 'layouts/login_layout'});
 
 });
 

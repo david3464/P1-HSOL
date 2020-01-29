@@ -15,8 +15,7 @@
             id="lesson_number"
             name="lesson_number"
             class="form-control"
-            placeholder="Enter Your Lesson Number You want add"
-            value="<%= typeof lesson_number != 'undefined' ? lesson_number : '' %>"
+            value="<%= course.lessons[i].lesson_number %>"
             />
         </div>
         <div class="form-group">
@@ -26,8 +25,7 @@
                 id="lesson_title"
                 name="lesson_title"
                 class="form-control"
-                placeholder="Enter Your Lesson Title You want add"
-                value="<%= typeof lesson_title != 'undefined' ? lesson_title : '' %>"
+                value="<%= course.lessons[i].lesson_title %>"
             />
         </div>
         <div class="form-group">
@@ -37,39 +35,38 @@
                 id="lesson_summary"
                 name="lesson_summary"
                 class="form-control"
-                placeholder="Enter Your Lesson Summary You want add"
-                value="<%= typeof lesson_summary != 'undefined' ? lesson_summary : '' %>"
+                value="<%= course.lessons[i].lesson_summary %>"
             />
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="lesson_description">Lesson Description</label>
             <input
                 type="text"
                 id="lesson_description"
                 name="lesson_description"
                 class="form-control"
-                placeholder="Enter Your Lesson Description You want add"
-                value="<%= typeof lesson_description != 'undefined' ? lesson_description : '' %>"
+                value="<%= course.lessons[i].lesson_description %>"
             />
-        </div>
+        </div> -->
+
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Lesson Content</label>
             <textarea type="text"
             rows="30" 
             id="lesson_content"
             name="lesson_content"
-            class="form-control"
-            placeholder="Enter Your Lesson Content You want add"
-            value="<%= typeof lesson_content != 'undefined' ? lesson_content : '' %>"><%= course.lessons[i].lesson_content %></textarea>
+            class="form-control">
+            <%= course.lessons[i].lesson_content %></textarea>
+        </div>        
+        Future Viedo Link Show Here
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src=<%= course.lessons[i].lesson_description %>> allowfullscreen></iframe>
         </div>
     </fieldset>
         <% } %>   
     <% } %>
 </ul><br>
-Future Viedo Link Show Here
-<!-- <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-</div>-->
+
 <br> 
 <a href="/<%= user.type %>s/<%= user.username %>/classes" class="btn btn-secondary">Back To Course List</a>
 

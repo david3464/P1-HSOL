@@ -172,7 +172,7 @@ router.get('/:id/lesson/:lesson_id', (req, res, next)=> {
     Course.getCourseById([req.params.id],function(err, course){
         // console.log(course);
         let lesson_id = req.params.lesson_id;
-        // console.log(lesson_id);
+        console.log(lesson_id);
 		if(err) throw err;
 		res.render('courses/lessondetails',{course: course, lesson_id: lesson_id});
 	});
