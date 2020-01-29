@@ -17,10 +17,10 @@ const Admin = require('../models/Admin');
 //router address localhost:3000/users
 //descriptions: System Home Page
 //comments: 
-router.get('/', (req, res, next)=> {
-  res.render('users/user_index',{ layout: 'layouts/login_layout'});
+// router.get('/', (req, res, next)=> {
+//   res.render('users/user_index',{ layout: 'layouts/login_layout'});
 
-});
+// });
 
 //router address localhost:3000/users/login
 //descriptions: Login Information 
