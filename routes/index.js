@@ -21,7 +21,7 @@ router.get('/about', async (req, res, next)=> {
 //descriptions: Initial Home Page
 //comments: Enterance Page
 router.get('/home', (req, res, next)=> {
-  res.render('users/user_index',{ layout: 'layouts/login_layout'});
+  res.render('users/home_index',{ layout: 'layouts/login_layout'});
 
 });
 
