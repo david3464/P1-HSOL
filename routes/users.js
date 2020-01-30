@@ -19,14 +19,21 @@ const Admin = require('../models/Admin');
 //comments: 
 // router.get('/', (req, res, next)=> {
 //   res.render('users/user_index',{ layout: 'layouts/login_layout'});
-
 // });
+
+//router address localhost:3000/home
+//descriptions: Initial Home Page
+//comments: Enterance Page
+router.get('/home', (req, res, next)=> {
+  res.render('users/homepage',{ layout: 'layouts/users_home_layout'});
+});
+
 
 //router address localhost:3000/users/login1
 //descriptions: Login Information 
 //comments: verify username and compare hash password 
 router.get('/login',  (req, res, next)=> {
-  res.render('users/login');
+  res.render('users/login',{ layout: 'layouts/users_home_layout'});
 });
 
 //router address localhost:3000/users/login2
