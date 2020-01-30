@@ -22,12 +22,18 @@ const Admin = require('../models/Admin');
 
 // });
 
-//router address localhost:3000/users/login
+//router address localhost:3000/users/login1
 //descriptions: Login Information 
 //comments: verify username and compare hash password 
-router.get('/login',  (req, res, next)=> {
-  res.render('users/login');
+router.get('/login1',  (req, res, next)=> {
+  res.render('users/login_1');
+});
 
+//router address localhost:3000/users/login2
+//descriptions: Login Information 
+//comments: verify username and compare hash password 
+router.get('/login2',  (req, res, next)=> {
+  res.render('users/login_2');
 });
 
 //router address localhost:3000/users/register
@@ -165,15 +171,26 @@ router.post('/register2', (req, res, next)=> {
 });
 
 
-//router address localhost:3000/users/login
+//router address localhost:3000/users/login1
 //descriptions: Login Handle
 //comments: Verify User Info and Compare Password
-router.post('/login', (req, res, next) => {
+router.post('/login1', (req, res, next) => {
     passport.authenticate('local',{ 
     successRedirect:'/users/dashboard',
     failureRedirect:'/users',
     failureFlash:true
   })(req, res, next);
+});
+
+//router address localhost:3000/users/login2
+//descriptions: Login Handle
+//comments: Verify User Info and Compare Password
+router.post('/login2', (req, res, next) => {
+  passport.authenticate('local',{ 
+  successRedirect:'/users/dashboard',
+  failureRedirect:'/users',
+  failureFlash:true
+})(req, res, next);
 });
 
 //router address localhost:3000/users/dashaboard
