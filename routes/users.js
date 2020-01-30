@@ -25,8 +25,8 @@ const Admin = require('../models/Admin');
 //router address localhost:3000/users/login1
 //descriptions: Login Information 
 //comments: verify username and compare hash password 
-router.get('/login1',  (req, res, next)=> {
-  res.render('users/login_1');
+router.get('/login',  (req, res, next)=> {
+  res.render('users/login');
 });
 
 //router address localhost:3000/users/login2
@@ -174,7 +174,7 @@ router.post('/register2', (req, res, next)=> {
 //router address localhost:3000/users/login1
 //descriptions: Login Handle
 //comments: Verify User Info and Compare Password
-router.post('/login1', (req, res, next) => {
+router.post('/login', (req, res, next) => {
     passport.authenticate('local',{ 
     successRedirect:'/users/dashboard',
     failureRedirect:'/users',
