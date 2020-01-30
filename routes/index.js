@@ -21,8 +21,14 @@ router.get('/about', async (req, res, next)=> {
 //descriptions: Initial Home Page
 //comments: Enterance Page
 router.get('/home', (req, res, next)=> {
-  res.render('users/home_index',{ layout: 'layouts/login_layout'});
-
+  res.render('homepage',{ layout: 'layouts/home_layout'});
 });
+
+//router address localhost:3000/home1
+//descriptions: Initial Home Page
+//comments: Enterance Page
+// router.get('/home1', (req, res, next)=> {
+//   res.render('users/home_index',{ layout: 'layouts/login_layout'});
+// });
 
 module.exports = router;
